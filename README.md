@@ -5,12 +5,22 @@ create .env file and add
 
     DATABASE_URL = postgresql+psycopg2://{username}:{password}@db:5432
 
-docker-compose build
+step-1:
 
-docker-compose run web alembic revision --autogenerate -m "first migration added"
+    docker-compose build
 
-docker-compose run web alembic upgrade head
+step-2:
 
-docker-compose up
+    docker-compose run web alembic revision --autogenerate -m "first migration added"
+
+
+step-3:
+
+    docker-compose run web alembic upgrade head
+
+
+step-4:
+
+    docker-compose up
 
 check in pgadmin with login with creds in docker file
